@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MainPage</title>
+</head>
+<body>
+    <nav>
+        <a href = "index.html" class="back">Skip to Main Content</a>
+        <div class="links">
+            <ul>
+                <li><a href = "index.html" class = "active">Home</a></li>
+                <li><a href = "pets.html">Pets</a></li>
+                <li><a href = "recipes.html">Recipes</a></li>
+                <li><a href = "travel.html">Travel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="button-container">
+            <button id="loginButton">LOGIN to SEE MORE!</button>
+
+            <div id="overlay"></div>
+            
+            <div id="loginForm">
+              <form onsubmit="submitForm(); return false;">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+              
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+                </div>
+              
+                <div class="form-group button-group">
+                  <input type="submit" value="LOGIN">
+                  <button type="button" onclick="closeForm()">Cancel</button>
+                </div>
+              </form>
+            </div>
+            
+            <script>
+            document.getElementById('loginButton').onclick = function() {
+              document.getElementById('loginForm').style.display = 'block';
+              document.getElementById('overlay').style.display = 'block';
+            };
+            
+            function closeForm() {
+              document.getElementById('loginForm').style.display = 'none';
+              document.getElementById('overlay').style.display = 'none';
+            }
+            
+            function submitForm() {
+              var name = document.getElementById('name').value;
+              alert('Welcome, ' + name + '!');
+              closeForm();
+            }
+            </script>
+        </div>
+
+        <h1>Common Class Project</h1>
+        <div class="bord">
+            <p>Welcome to main page, you could click the links above to go to different pages.</p>
+        </div>      
+    </main>
+    
+</body>
+</html>
